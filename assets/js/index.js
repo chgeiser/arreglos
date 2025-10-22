@@ -108,7 +108,8 @@ function mostrarPropiedad(tipoPropiedad){
                   <i class="fas fa-bath"></i> ${propiedadVenta.banos} Baños
                 </p>
                 <p><i class="fas fa-dollar-sign"></i> ${propiedadVenta.costo}</p>`
-                if(propiedadVenta.smoke===true){
+                if(propiedadVenta.smoke){
+                    //console.log('smoke ' + propiedadVenta.smoke);
                 `<p class="text-success">
                   <i class="fas fa-smoking-ban"></i> ${propiedadVenta.smoke}
                 </p>`
@@ -117,7 +118,8 @@ function mostrarPropiedad(tipoPropiedad){
                   <i class="fas fa-smoking-ban"></i> ${propiedadVenta.smoke}
                 </p> `
                 }
-                if(propiedadVenta.pets===true){
+                if(propiedadVenta.pets){
+                    //console.log('pets '+propiedadVenta.pets)
                 `<p class="text-success">
                   <i class="fa-solid fa-ban"></i> ${propiedadVenta.pets}
                 </p>`
@@ -154,7 +156,8 @@ function mostrarPropiedad(tipoPropiedad){
                   <i class="fas fa-bath"></i> ${propiedadAlquiler.banos} Baños
                 </p>
                 <p><i class="fas fa-dollar-sign"></i> ${propiedadAlquiler.costo}</p>`
-                if(propiedadAlquiler.smoke=== true){
+                if(propiedadAlquiler.smoke){
+                    //console.log('smoke ' + propiedadAlquiler.smoke);
                 `<p class="text-success">
                   <i class="fas fa-smoking-ban"></i> ${propiedadAlquiler.smoke}
                 </p>`
@@ -163,7 +166,8 @@ function mostrarPropiedad(tipoPropiedad){
                   <i class="fas fa-smoking-ban"></i> ${propiedadAlquiler.smoke}
                 </p>`
                 }
-                if(propiedadAlquiler.pets === true){
+                if(propiedadAlquiler.pets){
+                    //console.log('pets ' + propiedadAlquiler.pets);
                 `<p class="text-success">
                   <i class="fas fa-paw"></i> ${propiedadAlquiler.pets}
                 </p>`
