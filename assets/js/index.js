@@ -192,15 +192,18 @@ function mostrarPropiedad(tipoPropiedad){
     }
 
     let paginaVentas = html+textoListaVenta+final;
+    console.log(paginaVentas);
     
-    const nuevaVentana = window.open("", "_blank");
+    const nuevaVentana = window.open("propiedades_ventas", "_blank");
     nuevaVentana.document.write(paginaVentas);
     nuevaVentana.document.close();
 
     }else if(tipoPropiedad === "alquiler"){
 
         for(let propiedadAlquiler of propiedades_alquiler){
+
         textoListaAlquiler += `
+        <div class="col-md-4 mb-4">
         <div class="card">
               <img
                 src=${propiedadAlquiler.src}
@@ -234,14 +237,12 @@ function mostrarPropiedad(tipoPropiedad){
               </div>
             </div>
             </div>
-            </div>
             `;
 
 
     }
     let paginaAlquiler = html+textoListaAlquiler+final;
-    console.log(paginaAlquiler);
-    const nuevaVentana = window.open("", "_blank");
+    const nuevaVentana = window.open("propiedades_alquiler", "_blank");
     nuevaVentana.document.write(paginaAlquiler);
     nuevaVentana.document.close();
     }else{
