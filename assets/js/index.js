@@ -1,7 +1,7 @@
 const propiedades_ventas = [
     {
         nombre:"Apartamento de Lujo en zona Exclusiva",
-		src:"../img/propiedad_Ven_1.png",
+		src:"https://fotos.perfil.com/2018/09/21/trim/950/534/nueva-york-09212018-366965.jpg",
 		descripcion:"Este apartamento de lujo esta ubicado en una exclusiva zona residencial",
 		ubicacion:"123 Luxury Lane, Prestige Suburb, CA 45678",
 		habitaciones:4,
@@ -12,7 +12,7 @@ const propiedades_ventas = [
     },
     {
         nombre:"Apartamento acogedor en la Montañas",
-		src:"../img/propiedad_Ven_2.png",
+		src:"https://cdn.bioguia.com/embed/3d0fb0142790e6b90664042cbafcb1581427139/furgoneta.jpg",
 		descripcion:"Este apartamento acogedor está situado en lo alto de una montaña con impresionante vista",
 		ubicacion:"789 Mountain Road, Summit Peaks, CA 23456",
 		habitaciones:2,
@@ -23,7 +23,7 @@ const propiedades_ventas = [
     },
     {
         nombre:"Penthouse de lujo con terraza panorámica",
-		src:"../img/propiedad_Ven_3.png",
+		src:"https://resizer.glanacion.com/resizer/fhK-tSVag_8UGJjPMgWrspslPoU=/768x0/filters:quality(80)/cloudfront-us-east-1.images.arcpublishing.com/lanacionar/CUXVMXQE4JD5XIXX4X3PDZAVMY.jpg",
 		descripcion:"Este penthouse de lujo ofrece una terraza panorámica con vistas espectaculares",
 		ubicacion:"567 Skyline Avenue, Skyview City, CA 56789",
 		habitaciones:3,
@@ -37,7 +37,7 @@ const propiedades_ventas = [
 const propiedades_alquiler = [
     {
         nombre:"Apartamento en el centro de la ciudad",
-		src:"../img/propiedad_Arr_1.png",
+		src:"https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8YXBhcnRtZW50fGVufDB8MHwwfHx8MA%3D%3D&auto=format&fit=crop&w=700&q=60",
 		descripcion:"Este apartamento de 2 habitaciones está ubicado en el corazón de la ciudad, cerca de todo",
 		ubicacion:"123 Main Street, Anytown, CA 91234",
 		habitaciones:2,
@@ -48,7 +48,7 @@ const propiedades_alquiler = [
     },
     {
         nombre:"Apartamento luminoso con vista al mar",
-		src:"../img/propiedad_Arr_2.png",
+		src:"https://images.unsplash.com/photo-1669071192880-0a94316e6e09?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
 		descripcion:"Este hermoso apartamento ofrece una vista impresionante al mar",
 		ubicacion:"456 Ocean Avenue, Seaside Town, CA 56789",
 		habitaciones:3,
@@ -59,7 +59,7 @@ const propiedades_alquiler = [
     },
     {
         nombre:"Condominio moderno en zona Resindencial",
-		src:"../img/propiedad_Arr_3.png",
+		src:"https://images.unsplash.com/photo-1567496898669-ee935f5f647a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGNvbmRvfGVufDB8MHwwfHx8MA%3D%3D&auto=format&fit=crop&w=1000&q=60",
 		descripcion:"Este elegante condominio moderno esta ubicado en una tranquila zona residencial",
 		ubicacion:"123 Main Street, Anytown, CA 91234",
 		habitaciones:2,
@@ -73,20 +73,89 @@ const propiedades_alquiler = [
 
 function mostrarPropiedad(tipoPropiedad){
 
-    console.log('entre...')
+    let html = `
+    <!DOCTYPE html>
+    <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Desafío - Inmobiliaria</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/estilos.css" />
+    <!-- Bootstrap CDN -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://kit.fontawesome.com/f5bdbb41e0.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container">
+        <a class="navbar-brand" href="#">Inmobiliaria ADL</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarTogglerDemo02"
+          aria-controls="navbarTogglerDemo02"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <!-- <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li> -->
+            <li class="nav-item">
+              <a class="nav-link" href="#">En venta</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Alquiler</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <main class="container-fluid main-section">
+      <h1 class="text-white">Encuentra tu nueva propiedad</h1>
+    </main>
+    <div class="container mt-5">
+    <section id="${tipoPropiedad}" class="mb-5">
+    <h2>Propiedades en ${tipoPropiedad}</h2> 
+    <div class="row">
+    `;
 
-    console.log('entre...' + tipoPropiedad)
+    let final= `
+    </section>
+            </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+      crossorigin="anonymous"
+    ></script>
+    </body>
+</html>`;
+
 
     let textoListaVenta="";
     let textoListaAlquiler="";
 
-    const ventas = document.querySelector('#venta');
-    const alquiler = document.querySelector('#alquiler');
+    //const ventas = document.querySelector('#venta');
+    //const alquiler = document.querySelector('#alquiler');
 
     if(tipoPropiedad === "ventas"){
 
         for(let propiedadVenta of propiedades_ventas){
         textoListaVenta += `
+        <div class="col-md-4 mb-4">
         <div class="card">
               <img
                 src=${propiedadVenta.src}
@@ -107,31 +176,28 @@ function mostrarPropiedad(tipoPropiedad){
                   <i class="fas fa-bed"></i> ${propiedadVenta.habitaciones} Habitaciones |
                   <i class="fas fa-bath"></i> ${propiedadVenta.banos} Baños
                 </p>
-                <p><i class="fas fa-dollar-sign"></i> ${propiedadVenta.costo}</p>`
-                if(propiedadVenta.smoke){
-                    //console.log('smoke ' + propiedadVenta.smoke);
-                `<p class="text-success">
-                  <i class="fas fa-smoking-ban"></i> ${propiedadVenta.smoke}
-                </p>`
-                }else{
-                `<p class="text-danger">
-                  <i class="fas fa-smoking-ban"></i> ${propiedadVenta.smoke}
-                </p> `
-                }
-                if(propiedadVenta.pets){
-                    //console.log('pets '+propiedadVenta.pets)
-                `<p class="text-success">
-                  <i class="fa-solid fa-ban"></i> ${propiedadVenta.pets}
-                </p>`
-                }else{
-                `<p class="text-danger">
-                  <i class="fa-solid fa-ban"></i> ${propiedadVenta.pets}
-                </p>` 
-                }
-              `</div>
-            </div>`;
+                <p><i class="fas fa-dollar-sign"></i> ${propiedadVenta.costo}</p>
+                ${propiedadVenta.smoke 
+                        ? `<p class="text-success"><i class="fas fa-smoking"></i> Permitido fumar</p>` 
+                        : `<p class="text-danger"><i class="fas fa-smoking-ban"></i> No se permite fumar</p>`}
+                 ${propiedadVenta.pets 
+                        ? `<p class="text-success"><i class="fas fa-paw"></i> Mascotas permitidas</p>` 
+                        : `<p class="text-danger"><i class="fas fa-ban"></i> No se permiten mascotas</p>`}
+              </div>
+            </div>
+            </div>
+            `;
+
+            
     }
-    }else if(tipoPropiedad === "Alquiler"){
+
+    let paginaVentas = html+textoListaVenta+final;
+    
+    const nuevaVentana = window.open("", "_blank");
+    nuevaVentana.document.write(paginaVentas);
+    nuevaVentana.document.close();
+
+    }else if(tipoPropiedad === "alquiler"){
 
         for(let propiedadAlquiler of propiedades_alquiler){
         textoListaAlquiler += `
@@ -155,36 +221,37 @@ function mostrarPropiedad(tipoPropiedad){
                   <i class="fas fa-bed"></i> ${propiedadAlquiler.habitaciones} Habitaciones |
                   <i class="fas fa-bath"></i> ${propiedadAlquiler.banos} Baños
                 </p>
-                <p><i class="fas fa-dollar-sign"></i> ${propiedadAlquiler.costo}</p>`
-                if(propiedadAlquiler.smoke){
-                    //console.log('smoke ' + propiedadAlquiler.smoke);
-                `<p class="text-success">
-                  <i class="fas fa-smoking-ban"></i> ${propiedadAlquiler.smoke}
-                </p>`
-                }else{
-                `<p class="text-danger">
-                  <i class="fas fa-smoking-ban"></i> ${propiedadAlquiler.smoke}
-                </p>`
-                }
-                if(propiedadAlquiler.pets){
-                    //console.log('pets ' + propiedadAlquiler.pets);
-                `<p class="text-success">
-                  <i class="fas fa-paw"></i> ${propiedadAlquiler.pets}
-                </p>`
-                }else{
-                `<p class="text-danger">
-                  <i class="fas fa-paw"></i> ${propiedadAlquiler.pets}
-                </p>`
-                }
-              `</div>
-            </div>`;
+                <p><i class="fas fa-dollar-sign"></i> ${propiedadAlquiler.costo}</p>
+                
+                 ${propiedadAlquiler.smoke 
+                        ? `<p class="text-success"><i class="fas fa-smoking"></i> Permitido fumar</p>` 
+                        : `<p class="text-danger"><i class="fas fa-smoking-ban"></i> No se permite fumar</p>`}
+
+                ${propiedadAlquiler.pets 
+                    ? `<p class="text-success"><i class="fas fa-paw"></i> Mascotas permitidas</p>` 
+                    : `<p class="text-danger"><i class="fas fa-ban"></i> No se permiten mascotas</p>`}
+                
+              </div>
+            </div>
+            </div>
+            </div>
+            `;
+
+
     }
+    let paginaAlquiler = html+textoListaAlquiler+final;
+    console.log(paginaAlquiler);
+    const nuevaVentana = window.open("", "_blank");
+    nuevaVentana.document.write(paginaAlquiler);
+    nuevaVentana.document.close();
     }else{
         console.log("error");
     }
 
+    //
+    //
+
+   
     
-    ventas.innerHTML = textoListaVenta;
-    alquiler.innerHTML = textoListaAlquiler;
 
 }
